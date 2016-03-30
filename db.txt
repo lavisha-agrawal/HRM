@@ -1,0 +1,11 @@
+create database rms;
+create table employee(empid varchar(5) PRIMARY KEY,empname varchar(30), gender char, 
+                      address varchar(60),contactno integer, aemail varchar(50), role char(30),
+                      primaryskills varchar(30),  secondarskills varchar(30),pword varchar (15));
+
+create table projectdet(pid varchar(5) PRIMARY KEY,projectname varchar(30), 
+                      platform varchar(20),duration integer, clientname varchar(50),status char(20));
+
+create table projectmodules(pid varchar(5)  , projectname varchar(30) 
+                     Noofmodules integer, module1 char(30), module2 char(30), module3 char(30), module4 char(30),
+                     module5 char(30), projectdet_pid references projectdet(pid),primary key(pid));
